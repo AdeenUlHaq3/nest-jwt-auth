@@ -34,7 +34,7 @@ export class UserService {
     }
 
     async findAll(): Promise<UserDetails[]> {
-        return await this.userModal.find();
+        return this.userModal.find();
     }
 
     async create(name: string, email: string, hashedPassword: string): Promise<UserDocument> {

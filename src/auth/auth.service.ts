@@ -23,8 +23,6 @@ export class AuthService {
         } = user;
 
         const existingUser = await this.userService.findByEmail(email);
-        console.log(existingUser);
-
 
         if (existingUser) return 'Email taken!';
 
@@ -40,7 +38,6 @@ export class AuthService {
 
     async validateUser(email: string, password: string): Promise<UserDetails | null> {
         const user = await this.userService.findByEmail(email);
-        const doesUserExist = !!user;
 
         if (!user) return null;
 
